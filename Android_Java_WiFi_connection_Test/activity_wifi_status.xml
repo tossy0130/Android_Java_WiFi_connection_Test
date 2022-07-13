@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/loginGuideline"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.78" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/login_out_of_margin"
+            android:orientation="vertical"
+            android:background="@color/basic_dark_blue"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/loginGuideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/page_title_01"
+                android:textColor="#ffffff"
+                android:layout_marginHorizontal="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                app:layout_constraintHorizontal_bias="0.7"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:textSize="28dp"
+                android:text="通信テスト"
+                />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/loginGuideline_2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.05" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/loginGuideline_3"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.95" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/loginGuideline_4"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.95" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/loginGuideline_5"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.10" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="5dp"
+
+                android:background="#ffffff"
+                android:orientation="vertical"
+                android:paddingVertical="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/loginGuideline_4"
+                app:layout_constraintEnd_toStartOf="@+id/loginGuideline_3"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@id/loginGuideline_2"
+
+                app:layout_constraintTop_toBottomOf="@id/loginGuideline_5"
+                app:layout_constraintVertical_bias="0.526">
+
+                <!-- ====== 「通信テスト」「テスト中断」ボタンフレーム ======= -->
+                <TextView
+                    android:id="@+id/wifi_btn_statu_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_marginVertical="5dp"
+                    android:layout_marginTop="30dp"
+                    android:padding="0dp"
+                    android:text="通信テストを開始します"
+                    android:textColor="#000000"
+                    android:textSize="35dp"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <FrameLayout
+                    android:id="@+id/btn_frame"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/wifi_btn_statu_text">
+
+                    <!-- === 通信テスト 開始ボタン === -->
+                    <Button
+                        android:id="@+id/sagyou_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="100dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="40dp"
+                        android:backgroundTint="#2CB55D"
+                        android:paddingVertical="25dp"
+                        android:text="通信テスト開始"
+                        android:textColor="#ffffff"
+                        android:textSize="50dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/wifi_btn_statu_text" />
+
+                    <!-- === テスト中断ボタン === -->
+                    <Button
+                        android:id="@+id/stop_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="100dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="40dp"
+                        android:backgroundTint="#2CB55D"
+                        android:paddingVertical="25dp"
+                        android:text="テスト中断"
+                        android:textColor="#ffffff"
+                        android:textSize="50dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/wifi_btn_statu_text" />
+
+                </FrameLayout>
+
+
+                <!-- ====== OK , NG 用フレーム  ====== -->
+                <FrameLayout
+                    android:id="@+id/statu_frame"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="0dp"
+                    android:padding="0dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_frame">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <!-- スタッツ　表示 -->
+                        <TextView
+                            android:id="@+id/text_ok"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="20dp"
+                            android:layout_marginTop="20dp"
+                            android:paddingLeft="250dp"
+                            android:text="OK"
+                            android:textSize="50dp"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toLeftOf="@+id/text_ng"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/text_ng"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="20dp"
+                            android:layout_marginTop="20dp"
+                            android:paddingLeft="150dp"
+                            android:text="NG"
+                            android:textSize="50dp"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintLeft_toRightOf="@+id/text_ok"
+                            app:layout_constraintTop_toTopOf="parent" />
+                        <!-- スタッツ　表示 　END -->
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </FrameLayout>
+
+
+                <TextView
+                    android:id="@+id/tuusin_tag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="36dp"
+                    android:text="通信設定"
+                    android:textSize="40dp"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@+id/loginGuideline_on_off"
+                    app:layout_constraintTop_toBottomOf="@+id/statu_frame" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/loginGuideline_on_off"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent=".298" />
+
+                <!-- ON , OFF -->
+                <CheckBox
+                    android:id="@+id/Tuusin_Chbox_On"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="30dp"
+                    android:backgroundTint="#dedede"
+                    android:paddingVertical="15dp"
+                    android:paddingRight="30dp"
+                    android:scaleX="2.3"
+                    android:scaleY="2.3"
+                    android:text="ON"
+                    android:textSize="36dp"
+                    app:layout_constraintHorizontal_bias="0."
+                    app:layout_constraintLeft_toRightOf="@+id/loginGuideline_on_off"
+                    app:layout_constraintTop_toBottomOf="@+id/statu_frame" />
+
+                <CheckBox
+                    android:id="@+id/Tuusin_Chbox_Off"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="30dp"
+                    android:backgroundTint="#dedede"
+                    android:paddingVertical="15dp"
+                    android:paddingRight="30dp"
+                    android:scaleX="2.3"
+                    android:scaleY="2.3"
+                    android:text="OFF"
+                    android:textSize="36dp"
+                    app:layout_constraintLeft_toRightOf="@+id/loginGuideline_on_off"
+                    app:layout_constraintTop_toBottomOf="@+id/Tuusin_Chbox_On" />
+                <!-- ON , OFF -->
+
+                <!-- 通信先　、　アドレス -->
+                <TextView
+                    android:id="@+id/wifi_tag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="36dp"
+                    android:text="通信先："
+                    android:textSize="40dp"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@+id/wifi_view"
+                    app:layout_constraintTop_toBottomOf="@+id/Tuusin_Chbox_Off" />
+
+                <TextView
+                    android:id="@+id/wifi_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="36dp"
+                    android:text=""
+                    android:textSize="40dp"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintLeft_toRightOf="@+id/wifi_tag"
+                    app:layout_constraintTop_toBottomOf="@+id/Tuusin_Chbox_Off" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/login_out_of_margin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/loginGuideline"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <!--============== レイアウト　right=================-->
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/buttonVerticalGuideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="40dp" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:gravity="end"
+                android:orientation="vertical"
+                android:padding="@dimen/login_out_of_margin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="50dp"
+                    android:orientation="vertical"
+                    android:background="#00000000"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/buttonVerticalGuideline"
+                    app:layout_constraintTop_toTopOf="parent"
+                    >
+
+                    <!-- 切り替え ボタン -->
+                    <Button
+                        android:id="@+id/wifi_kirikae_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="480dp"
+                        android:backgroundTint="#2CB55D"
+                        android:text="切替"
+                        android:textColor="#ffffff"
+                        android:textSize="30dp"
+                        android:paddingRight="50dp"
+                        android:paddingLeft="50dp"
+                        android:paddingVertical="25dp"
+                        android:layout_marginLeft="0dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
+
+                    <!-- 戻る ボタン -->
+                    <Button
+                        android:id="@+id/wifi_back_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:paddingRight="50dp"
+                        android:paddingLeft="50dp"
+                        android:backgroundTint="#2CB55D"
+                        android:text="戻る"
+                        android:textColor="#ffffff"
+                        android:textSize="30dp"
+                        android:paddingVertical="25dp"
+                        app:layout_constraintTop_toBottomOf="@+id/wifi_kirikae_btn"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </LinearLayout>
+
+            <!--============== レイアウト　right END =================-->
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
